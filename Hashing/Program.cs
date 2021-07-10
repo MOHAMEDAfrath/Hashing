@@ -32,6 +32,12 @@ namespace Hashing
             {
                 Console.WriteLine("The frequency of {0} in sentence is {1}",member,myMapNode.Get(member));
             }
+            myMapNode.RemoveOperation("avoidable");
+            foreach (var member in set)
+            {
+                Console.WriteLine("The frequency of {0} in sentence is {1}", member, myMapNode.Get(member));
+            }
+
 
         }
     }

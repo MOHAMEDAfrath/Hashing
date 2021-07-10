@@ -74,6 +74,34 @@ namespace Hashing
             list.AddLast(item);
 
         }
+        public void RemoveOperation(K key)
+        {
+            bool found = false;
+            int position = GetBucketValue(key);
+            KeyValue<K, V> alreadyfoundKey = default(KeyValue<K, V>);
+            LinkedList<KeyValue<K, V>> linkedlist = GetLinkedListPosition(position);
+            foreach (KeyValue<K, V> keyValue in linkedlist)
+            {
+                if (keyValue.Key.Equals(key))
+                {
+                    found = true;
+                    alreadyfoundKey = keyValue;
+                    break;
+                }
+               
+            }
+            if(found == true)
+            {
+                Console.WriteLine("Removed " + key);
+                linkedlist.Remove(alreadyfoundKey);
+            }
+            else
+            {
+                Console.WriteLine("Not found!Cannot remove!");
+            }
+
+
+        }
         public V Get(K key)
         {
             int position = GetBucketValue(key);

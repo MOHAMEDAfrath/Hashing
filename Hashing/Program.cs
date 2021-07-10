@@ -8,7 +8,7 @@ namespace Hashing
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to hashing");
-            string sample = "To be or not to be";
+            string sample = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
             string[] splited = sample.ToLower().Split(' ');
             HashSet<string> set = new HashSet<string>();
             MyMapNode<string, int> myMapNode = new MyMapNode<string, int>(5);
